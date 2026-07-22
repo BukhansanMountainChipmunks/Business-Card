@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Card</title>
 
+<style>
+body{
+    margin:0;
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    font-family:Arial, sans-serif;
+}
+
+.container{
+    text-align:center;
+}
+
+img{
+    width:90vw;
+    max-width:700px;
+    height:auto;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    transition:0.3s;
+}
+
+button{
+    margin-top:20px;
+    padding:14px 28px;
+    border:none;
+    border-radius:10px;
+    background:#111;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#333;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<img id="card" src="Front.png" alt="Business Card">
+
+<br>
+
+<button onclick="flipCard()">뒷면 보기</button>
+
+</div>
+
+<script>
+
+let isFront = true;
+
+function flipCard(){
+
+    const card = document.getElementById("card");
+    const button = document.querySelector("button");
+
+    if(isFront){
+        card.src = "Back.png";
+        button.textContent = "앞면 보기";
+    }else{
+        card.src = "Front.png";
+        button.textContent = "뒷면 보기";
+    }
+
+    isFront = !isFront;
+}
+
+</script>
+
+</body>
+</html>
