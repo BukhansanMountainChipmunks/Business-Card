@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Business Card</title>
+
+<title>북한산 다람쥐</title>
 
 <style>
 body{
     margin:0;
-    background:#f2f2f2;
+    background:#f3f3f3;
     display:flex;
     justify-content:center;
     align-items:center;
     min-height:100vh;
-    font-family:Arial, sans-serif;
+    font-family:sans-serif;
 }
 
 .container{
@@ -21,36 +22,31 @@ body{
 }
 
 img{
-    width:90vw;
+    width:90%;
     max-width:700px;
     height:auto;
     border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
-    transition:0.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
 button{
     margin-top:20px;
-    padding:14px 28px;
+    padding:14px 30px;
     border:none;
     border-radius:10px;
-    background:#111;
-    color:#fff;
+    background:black;
+    color:white;
     font-size:16px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#333;
 }
 </style>
 
 </head>
+
 <body>
 
 <div class="container">
 
-<img id="card" src="Front.png" alt="Business Card">
+<img id="card" src="Front_v2.png">
 
 <br>
 
@@ -60,25 +56,31 @@ button:hover{
 
 <script>
 
-let isFront = true;
+let front = true;
 
 function flipCard(){
 
-    const card = document.getElementById("card");
-    const button = document.querySelector("button");
+const img=document.getElementById("card");
+const btn=document.querySelector("button");
 
-    if(isFront){
-        card.src = "Back.png";
-        button.textContent = "앞면 보기";
-    }else{
-        card.src = "Front.png";
-        button.textContent = "뒷면 보기";
-    }
+if(front){
 
-    isFront = !isFront;
+img.src="Back_v2.png";
+btn.textContent="앞면 보기";
+
+}else{
+
+img.src="Front_v2.png";
+btn.textContent="뒷면 보기";
+
+}
+
+front=!front;
+
 }
 
 </script>
 
 </body>
+
 </html>
